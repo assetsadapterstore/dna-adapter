@@ -19,7 +19,7 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/assetsadapterstore/dnaadapter/addrdec"
+	"github.com/assetsadapterstore/dna-adapter/addrdec"
 )
 
 func TestAddressDecoder_AddressEncode(t *testing.T) {

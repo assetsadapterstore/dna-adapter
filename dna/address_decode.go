@@ -16,7 +16,7 @@
 package dna
 
 import (
-	"github.com/assetsadapterstore/dnaadapter/addrdec"
+	"github.com/assetsadapterstore/dna-adapter/addrdec"
 )
 
 type addressDecoder struct {
@@ -55,7 +55,6 @@ func (decoder *addressDecoder) WIFToPrivateKey(wif string, isTestnet bool) ([]by
 	}
 	return priv, nil
 }
-
 
 // AddressVerify 地址校验
 func (decoder *addressDecoder) AddressVerify(address string, opts ...interface{}) bool {
