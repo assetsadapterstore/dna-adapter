@@ -45,7 +45,7 @@ func TestWalletManager_GetWalletInfo(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	wallet, err := tm.GetWalletInfo(testApp, "WF3Bq2FJ444BH1ZHfjuDRC72bhqH8NRNLb")
+	wallet, err := tm.GetWalletInfo(testApp, "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx")
 	if err != nil {
 		log.Error("unexpected error:", err)
 		return
@@ -74,7 +74,7 @@ func TestWalletManager_CreateAssetsAccount(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	walletID := "WKMowUwix8Eo6Y1rLcnEcA8oszVRL2C1tj"
+	walletID := "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx"
 	account := &openwallet.AssetsAccount{Alias: "zbcat999", WalletID: walletID, Required: 1, Symbol: "DNA", IsTrust: true}
 	account, address, err := tm.CreateAssetsAccount(testApp, walletID, "12345678", account, nil)
 	if err != nil {
@@ -92,7 +92,7 @@ func TestWalletManager_GetAssetsAccountList(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	walletID := "WHx7NV9em582AXU5tu8r5xdpcuBjrtMTUZ"
+	walletID := "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx"
 	list, err := tm.GetAssetsAccountList(testApp, walletID, 0, 10000000)
 	if err != nil {
 		log.Error("unexpected error:", err)
@@ -111,8 +111,8 @@ func TestWalletManager_CreateAddress(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	walletID := "WHx7NV9em582AXU5tu8r5xdpcuBjrtMTUZ"
-	accountID := "WHx7NV9em582AXU5tu8r5xdpcuBjrtMTUZ"
+	walletID := "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx"
+	accountID := "2cNrcyg8ZQrCDy9BkMA6pSwRncRtipT7FNEPeC8tMTaU"
 	address, err := tm.CreateAddress(testApp, walletID, accountID, 1)
 	if err != nil {
 		log.Error(err)
@@ -128,8 +128,9 @@ func TestWalletManager_GetAddressList(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	walletID := "W4oCSSCw9YrCSy4M959ChKM7BRphgZVeMw"
-	accountID := "DZazoeronbtQRkm6gEyqDubvYwCNGXUWP2fzBx3bSBrJ" //zbalice111 DNA6SsHffQqnnBMM3wg8LKQdRc7rMJwkvye2JB8LTihCJXAJGLs6z
+	walletID := "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx"
+	accountID := "2cNrcyg8ZQrCDy9BkMA6pSwRncRtipT7FNEPeC8tMTaU" //zbalice111 DNA6aWYcRkhqAUPLEkf89eZWwnJBxexSkK6nNwonaB9rQaekNR5WQ
+	// DNA7USYmVdEkfzVyePSsawE6VGNFGHsQp8uG2fkRW6MNKKaVWHWFi
 
 	// walletID := "WKMowUwix8Eo6Y1rLcnEcA8oszVRL2C1tj"
 	// accountID := "AszEboNMoJRbrLZtuSdci312StDrtrLuxwbrc38o6moH" //zbbob111 DNA7VZ6vU5T4Yfcd1oQnwk8nVWTGg1cT8CRB7cswhmKNXUCTc4KtU

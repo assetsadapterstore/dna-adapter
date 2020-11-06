@@ -23,7 +23,7 @@ func TestAddressDecoderV2_AddressDecode(t *testing.T) {
 		// TODO: Add test cases.
 		{
 			name: "dna bech32", fields: fields{IsTestNet: false},
-			args:    args{addr: "DNA4txUYJW7JwMhYYP3uePSfj4XfHqUnbLdzpPmGNQFHvaNjw4Ps2"},
+			args:    args{addr: "DNA7tAV1NzvJEYFNAv22tqk2UKuoPZ5S7ZKB6EkgbSyfEQV8DmQkK"},
 			wantErr: false,
 		},
 	}

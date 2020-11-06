@@ -81,7 +81,7 @@ func TestWalletManager_GetAssetsAccountTokenBalance(t *testing.T) {
 		Symbol:   "DNA",
 		Name:     "DNA",
 		Token:    "DNA",
-		Decimals: 5,
+		Decimals: 4,
 	}
 
 	balance, err := tm.GetAssetsAccountTokenBalance(testApp, walletID, accountID, contract)

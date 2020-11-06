@@ -120,8 +120,8 @@ func testSubmitTransactionStep(tm *openw.WalletManager, rawTx *openwallet.RawTra
 
 func TestTransfer(t *testing.T) {
 	tm := testInitWalletManager()
-	walletID := "W4oCSSCw9YrCSy4M959ChKM7BRphgZVeMw"
-	accountID := "DZazoeronbtQRkm6gEyqDubvYwCNGXUWP2fzBx3bSBrJ"
+	walletID := "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx"
+	accountID := "2cNrcyg8ZQrCDy9BkMA6pSwRncRtipT7FNEPeC8tMTaU"
 	to := "zbtest333"
 
 	//accountID := "9NKxTnfSe4o1B7mmtWt5u7jEjUGEfcvRR7K32Z3gXeMr"
@@ -132,7 +132,7 @@ func TestTransfer(t *testing.T) {
 		Symbol:   "DNA",
 		Name:     "DNA",
 		Token:    "DNA",
-		Decimals: 5,
+		Decimals: 4,
 	}
 
 	testGetAssetsAccountBalance(tm, walletID, accountID)
@@ -172,7 +172,7 @@ func TestSummary(t *testing.T) {
 		Symbol:   "DNA",
 		Name:     "DNA",
 		Token:    "DNA",
-		Decimals: 5,
+		Decimals: 4,
 	}
 
 	testGetAssetsAccountBalance(tm, walletID, accountID)
@@ -204,4 +204,3 @@ func TestSummary(t *testing.T) {
 	}
 
 }
-

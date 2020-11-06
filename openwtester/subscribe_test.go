@@ -16,9 +16,10 @@
 package openwtester
 
 import (
-	"github.com/blocktree/openwallet/common/file"
 	"path/filepath"
 	"testing"
+
+	"github.com/blocktree/openwallet/common/file"
 
 	"github.com/astaxie/beego/config"
 	"github.com/blocktree/openwallet/log"
@@ -60,10 +61,10 @@ func TestSubscribeAddress_DNA(t *testing.T) {
 		endRunning = make(chan bool, 1)
 		symbol     = "DNA"
 		addrs      = map[string]string{
-			"zbalice111":  "sender",
-			"zbtest222":   "receiver",
-			"zbbob111":    "receiver", //bob
-			"1.2.1588722": "sender",
+			"bayviewdna20": "sender",
+			"lrc191431lrc": "receiver",
+			"oieieio01313": "receiver",
+			"dnatransfer0": "sender",
 		}
 	)
 
@@ -111,7 +112,7 @@ func TestSubscribeAddress_DNA(t *testing.T) {
 		scanner.SetBlockchainDAI(dai)
 	}
 
-	scanner.SetRescanBlockHeight(1681759)
+	scanner.SetRescanBlockHeight(10926938)
 
 	if scanner == nil {
 		log.Error(symbol, "is not support block scan")
