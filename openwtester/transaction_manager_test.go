@@ -16,10 +16,11 @@
 package openwtester
 
 import (
-	"github.com/astaxie/beego/config"
-	"github.com/blocktree/openwallet/openw"
 	"path/filepath"
 	"testing"
+
+	"github.com/astaxie/beego/config"
+	"github.com/blocktree/openwallet/openw"
 
 	"github.com/blocktree/openwallet/log"
 	"github.com/blocktree/openwallet/openwallet"
@@ -60,8 +61,8 @@ func TestWalletManager_GetTransactionByWxID(t *testing.T) {
 
 func TestWalletManager_GetAssetsAccountBalance(t *testing.T) {
 	tm := testInitWalletManager()
-	walletID := "W4oCSSCw9YrCSy4M959ChKM7BRphgZVeMw"
-	accountID := "DZazoeronbtQRkm6gEyqDubvYwCNGXUWP2fzBx3bSBrJ"
+	walletID := "W4pPxx4E4tM1TJWiAyMcGSFMbE8c68URbW"
+	accountID := "7z1CyywoB1vC1xnvV4kbvVk1mMjQumV4Vmgp3BbHsHJo"
 
 	balance, err := tm.GetAssetsAccountBalance(testApp, walletID, accountID)
 	if err != nil {
@@ -73,8 +74,8 @@ func TestWalletManager_GetAssetsAccountBalance(t *testing.T) {
 
 func TestWalletManager_GetAssetsAccountTokenBalance(t *testing.T) {
 	tm := testInitWalletManager()
-	walletID := "W4oCSSCw9YrCSy4M959ChKM7BRphgZVeMw"
-	accountID := "DZazoeronbtQRkm6gEyqDubvYwCNGXUWP2fzBx3bSBrJ"
+	walletID := "W4pPxx4E4tM1TJWiAyMcGSFMbE8c68URbW"
+	accountID := "7z1CyywoB1vC1xnvV4kbvVk1mMjQumV4Vmgp3BbHsHJo"
 
 	contract := openwallet.SmartContract{
 		Address:  "1.3.0",
@@ -104,7 +105,6 @@ func TestWalletManager_GetEstimateFeeRate(t *testing.T) {
 	}
 	log.Std.Info("feeRate: %s %s/%s", feeRate, coin.Symbol, unit)
 }
-
 
 func TestGetAddressVerify(t *testing.T) {
 	symbol := "DNA"

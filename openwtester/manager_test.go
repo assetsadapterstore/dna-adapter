@@ -45,7 +45,7 @@ func TestWalletManager_GetWalletInfo(t *testing.T) {
 
 	tm := testInitWalletManager()
 
-	wallet, err := tm.GetWalletInfo(testApp, "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx")
+	wallet, err := tm.GetWalletInfo(testApp, "W4pPxx4E4tM1TJWiAyMcGSFMbE8c68URbW")
 	if err != nil {
 		log.Error("unexpected error:", err)
 		return
@@ -75,7 +75,7 @@ func TestWalletManager_CreateAssetsAccount(t *testing.T) {
 	tm := testInitWalletManager()
 
 	walletID := "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx"
-	account := &openwallet.AssetsAccount{Alias: "zbcat999", WalletID: walletID, Required: 1, Symbol: "DNA", IsTrust: true}
+	account := &openwallet.AssetsAccount{Alias: "zbbob111", WalletID: walletID, Required: 1, Symbol: "DNA", IsTrust: true}
 	account, address, err := tm.CreateAssetsAccount(testApp, walletID, "12345678", account, nil)
 	if err != nil {
 		log.Error(err)
@@ -129,14 +129,13 @@ func TestWalletManager_GetAddressList(t *testing.T) {
 	tm := testInitWalletManager()
 
 	walletID := "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx"
-	accountID := "2cNrcyg8ZQrCDy9BkMA6pSwRncRtipT7FNEPeC8tMTaU" //zbalice111 DNA6aWYcRkhqAUPLEkf89eZWwnJBxexSkK6nNwonaB9rQaekNR5WQ
-	// DNA7USYmVdEkfzVyePSsawE6VGNFGHsQp8uG2fkRW6MNKKaVWHWFi
+	accountID := "Fej7cNjwXmr54kno1C8irVRULdufwZhYKVLcf6pLTz3z" //zbbob111 DNA5KvED5xiNiLvwyV8nH5BUH1eTm2uqRrvu5WgwG6CJYkqHiDocD
 
-	// walletID := "WKMowUwix8Eo6Y1rLcnEcA8oszVRL2C1tj"
-	// accountID := "AszEboNMoJRbrLZtuSdci312StDrtrLuxwbrc38o6moH" //zbbob111 DNA7VZ6vU5T4Yfcd1oQnwk8nVWTGg1cT8CRB7cswhmKNXUCTc4KtU
+	// walletID := "W4pPxx4E4tM1TJWiAyMcGSFMbE8c68URbW"
+	// accountID := "7z1CyywoB1vC1xnvV4kbvVk1mMjQumV4Vmgp3BbHsHJo" //zbalice999 DNA5wroY2sDyzPMjF9z3EoBugCnDLP1KSoaFXbb3MAm4gWhUAyFb4
 
-	// walletID := "WKMowUwix8Eo6Y1rLcnEcA8oszVRL2C1tj"
-	// accountID := "Fo8dJUXcHA1n3Q6Cegr5ou2pppe9fpsd7kqSh4GsyXDc" //zbcat111 DNA5s3e7wthf4BQ61JjDCegZvt9LDEtmUJJKsFfgRnrrgjJG66BLr
+	// walletID := "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx"
+	// accountID := "2cNrcyg8ZQrCDy9BkMA6pSwRncRtipT7FNEPeC8tMTaU" //zbcat999 DNA6aWYcRkhqAUPLEkf89eZWwnJBxexSkK6nNwonaB9rQaekNR5WQ DNA7USYmVdEkfzVyePSsawE6VGNFGHsQp8uG2fkRW6MNKKaVWHWFi
 
 	list, err := tm.GetAddressList(testApp, walletID, accountID, 0, -1, false)
 	if err != nil {

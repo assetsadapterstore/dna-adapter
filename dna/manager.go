@@ -23,7 +23,7 @@ import (
 )
 
 const (
-	ChainIDDNA = "8ac5756ab6f78c1ae92d9654072eecf7fc81b418a05073ad067095061067e3c9"
+	ChainIDDNA = "24938a99198d850bb7d79010c1325fb63fde63e8e477a5443ff5ce50ab867055"
 )
 
 type WalletManager struct {
