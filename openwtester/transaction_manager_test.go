@@ -20,10 +20,10 @@ import (
 	"testing"
 
 	"github.com/astaxie/beego/config"
-	"github.com/blocktree/openwallet/openw"
+	"github.com/blocktree/openwallet/v2/openw"
 
-	"github.com/blocktree/openwallet/log"
-	"github.com/blocktree/openwallet/openwallet"
+	"github.com/blocktree/openwallet/v2/log"
+	"github.com/blocktree/openwallet/v2/openwallet"
 )
 
 func TestWalletManager_GetTransactions(t *testing.T) {
@@ -42,11 +42,11 @@ func TestWalletManager_GetTransactions(t *testing.T) {
 func TestWalletManager_GetTransactionByWxID(t *testing.T) {
 	tm := testInitWalletManager()
 	wxID := openwallet.GenTransactionWxID(&openwallet.Transaction{
-		TxID: "bfa6febb33c8ddde9f7f7b4d93043956cce7e0f4e95da259a78dc9068d178fee",
+		TxID: "ab41a606f0ef0ce4c000514e8f4dd3a7dd0ecee8",
 		Coin: openwallet.Coin{
-			Symbol:     "LTC",
-			IsContract: false,
-			ContractID: "",
+			Symbol:     "DNA",
+			IsContract: true,
+			ContractID: "1.3.0",
 		},
 	})
 	log.Info("wxID:", wxID)
@@ -58,6 +58,8 @@ func TestWalletManager_GetTransactionByWxID(t *testing.T) {
 	}
 	log.Info("tx:", tx)
 }
+
+// esQiqx2xKUfGK2pneR9NvCg2GH/vVq5PGMgz2CXKRmw= ab41a606f0ef0ce4c000514e8f4dd3a7dd0ecee8
 
 func TestWalletManager_GetAssetsAccountBalance(t *testing.T) {
 	tm := testInitWalletManager()

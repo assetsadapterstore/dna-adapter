@@ -16,8 +16,8 @@
 package dna
 
 import (
-	"github.com/blocktree/bitshares-adapter/bitshares"
-	"github.com/blocktree/openwallet/log"
+	"github.com/blocktree/bitshares-adapter/v2/bitshares"
+	"github.com/blocktree/openwallet/v2/log"
 	bts "github.com/denkhaus/bitshares"
 	"github.com/denkhaus/bitshares/config"
 )

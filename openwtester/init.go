@@ -2,8 +2,8 @@ package openwtester
 
 import (
 	"github.com/assetsadapterstore/dna-adapter/dna"
-	"github.com/blocktree/openwallet/log"
-	"github.com/blocktree/openwallet/openw"
+	"github.com/blocktree/openwallet/v2/log"
+	"github.com/blocktree/openwallet/v2/openw"
 )
 
 func init() {

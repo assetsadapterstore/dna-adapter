@@ -18,10 +18,10 @@ package openwtester
 import (
 	"testing"
 
-	"github.com/blocktree/openwallet/openw"
+	"github.com/blocktree/openwallet/v2/openw"
 
-	"github.com/blocktree/openwallet/log"
-	"github.com/blocktree/openwallet/openwallet"
+	"github.com/blocktree/openwallet/v2/log"
+	"github.com/blocktree/openwallet/v2/openwallet"
 )
 
 func testGetAssetsAccountBalance(tm *openw.WalletManager, walletID, accountID string) {
@@ -50,7 +50,7 @@ func testCreateTransactionStep(tm *openw.WalletManager, walletID, accountID, to,
 	//	return nil, err
 	//}
 
-	rawTx, err := tm.CreateTransaction(testApp, walletID, accountID, amount, to, feeRate, memo, contract)
+	rawTx, err := tm.CreateTransaction(testApp, walletID, accountID, amount, to, feeRate, memo, contract, nil)
 
 	if err != nil {
 		log.Error("CreateTransaction failed, unexpected error:", err)
@@ -121,8 +121,8 @@ func testSubmitTransactionStep(tm *openw.WalletManager, rawTx *openwallet.RawTra
 func TestTransfer(t *testing.T) {
 	tm := testInitWalletManager()
 	walletID := "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx"
-	accountID := "2cNrcyg8ZQrCDy9BkMA6pSwRncRtipT7FNEPeC8tMTaU"
-	to := "zbtest333"
+	accountID := "Fej7cNjwXmr54kno1C8irVRULdufwZhYKVLcf6pLTz3z"
+	to := "zbcat999"
 
 	//accountID := "9NKxTnfSe4o1B7mmtWt5u7jEjUGEfcvRR7K32Z3gXeMr"
 	//to := ""
@@ -137,7 +137,7 @@ func TestTransfer(t *testing.T) {
 
 	testGetAssetsAccountBalance(tm, walletID, accountID)
 
-	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "0.02", "", "hello boy", &contract)
+	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "1.2345", "", "", &contract)
 	if err != nil {
 		return
 	}
@@ -163,9 +163,9 @@ func TestTransfer(t *testing.T) {
 
 func TestSummary(t *testing.T) {
 	tm := testInitWalletManager()
-	walletID := "WEyoXkvytkkbK7RJLdoS4H7hbdjDAvRXjY"
-	accountID := "AwxbDgWv6d8DUFk36SNWGw3y6GE9RbZtVGjAsQqP3u5y"
-	summaryAddress := "BTStesterabc"
+	walletID := "WJw2FiwwbyP5zyk9YMWi46coeeCDWgi5Mx"
+	accountID := "Fej7cNjwXmr54kno1C8irVRULdufwZhYKVLcf6pLTz3z"
+	summaryAddress := "zbcat999"
 
 	contract := openwallet.SmartContract{
 		Address:  "1.3.0",

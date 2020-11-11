@@ -2,8 +2,9 @@ package addrdec
 
 import (
 	"fmt"
-	"github.com/blocktree/openwallet/openwallet"
 	"strings"
+
+	"github.com/blocktree/openwallet/v2/openwallet"
 
 	"github.com/blocktree/go-owcdrivers/addressEncoder"
 )
