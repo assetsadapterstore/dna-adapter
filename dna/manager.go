@@ -38,6 +38,7 @@ func NewWalletManager() *WalletManager {
 		ID:        ChainIDDNA,
 	})
 	config.SetCurrent(ChainIDDNA)
+	
 	wm := WalletManager{}
 	wm.WalletManager = bitshares.NewWalletManager(nil)
 	wm.Config = bitshares.NewConfig(Symbol)
