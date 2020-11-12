@@ -31,6 +31,13 @@ type WalletManager struct {
 }
 
 func NewWalletManager() *WalletManager {
+	config.Add(config.ChainConfig{
+		Name:      "DNA",
+		CoreAsset: "DNA",
+		Prefix:    "DNA",
+		ID:        ChainIDDNA,
+	})
+	config.SetCurrent(ChainIDDNA)
 	wm := WalletManager{}
 	wm.WalletManager = bitshares.NewWalletManager(nil)
 	wm.Config = bitshares.NewConfig(Symbol)

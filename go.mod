@@ -5,7 +5,7 @@ go 1.13
 require (
 	github.com/astaxie/beego v1.12.0
 	github.com/blocktree/bitshares-adapter v1.2.1 // indirect
-	github.com/blocktree/bitshares-adapter/v2 v2.1.0
+	github.com/blocktree/bitshares-adapter/v2 v2.1.1
 	github.com/blocktree/go-owcdrivers v1.2.0
 	github.com/blocktree/go-owcrypt v1.1.1
 	github.com/blocktree/openwallet/v2 v2.0.10
