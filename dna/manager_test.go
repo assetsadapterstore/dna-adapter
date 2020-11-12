@@ -16,7 +16,7 @@
 package dna
 
 import (
-	"github.com/blocktree/bitshares-adapter/v2/bitshares"
+	"github.com/blocktree/bitshares-adapter/bitshares"
 )
 
 var (
