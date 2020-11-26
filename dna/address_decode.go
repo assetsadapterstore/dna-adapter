@@ -58,9 +58,17 @@ func (decoder *addressDecoder) WIFToPrivateKey(wif string, isTestnet bool) ([]by
 
 // AddressVerify 地址校验
 func (decoder *addressDecoder) AddressVerify(address string, opts ...interface{}) bool {
-	_, err := decoder.wm.Api.GetAccounts(address)
+	if len(address) == 0 {
+		return false
+	}
+	accounts, err := decoder.wm.Api.GetAccounts(address)
 	if err != nil {
 		return false
 	}
-	return true
+	if len(accounts) > 0 {
+		if accounts[0] != nil {
+			return true
+		}
+	}
+	return false
 }

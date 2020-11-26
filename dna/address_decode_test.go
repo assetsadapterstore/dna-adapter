@@ -20,6 +20,7 @@ import (
 	"testing"
 
 	"github.com/assetsadapterstore/dna-adapter/addrdec"
+	"github.com/blocktree/bitshares-adapter/bitshares"
 )
 
 func TestAddressDecoder_AddressEncode(t *testing.T) {
@@ -46,4 +47,40 @@ func TestAddressDecoder_AddressDecode(t *testing.T) {
 
 	p2shHash, _ := addrdec.Default.AddressDecode(p2shAddr)
 	t.Logf("p2shHash: %s", hex.EncodeToString(p2shHash))
+}
+
+func Test_addressDecoder_AddressVerify(t *testing.T) {
+
+	wm := NewWalletManager()
+	wm.Config.ServerAPI = ""
+	wm.Api = bitshares.NewWalletClient(wm.Config.ServerAPI, "", true)
+	decoder := NewAddressDecoder(wm)
+
+	type args struct {
+		address string
+		opts    []interface{}
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		{
+			name: "dna zbalice999",
+			args: args{address: "zbalice999"},
+			want: true,
+		},
+		{
+			name: "dna zbalice99911 error",
+			args: args{address: "zbalice99911"},
+			want: false,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := decoder.AddressVerify(tt.args.address, tt.args.opts...); got != tt.want {
+				t.Errorf("addressDecoder.AddressVerify() = %v, want %v", got, tt.want)
+			}
+		})
+	}
 }
