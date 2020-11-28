@@ -12,3 +12,5 @@ require (
 )
 
 replace github.com/imroc/req => github.com/blocktree/req v0.2.5
+
+replace github.com/denkhaus/bitshares => github.com/blocktree/go-bitshares v0.6.3
